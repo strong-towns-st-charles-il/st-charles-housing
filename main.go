@@ -88,12 +88,9 @@ func main() {
 	fmt.Printf("average affordable house sqft: %.2f\n", avgAreaA)
 	fmt.Printf("ratio average/affordable: %.2f\n", avgArea/avgAreaA)
 
-	avgCost := costArea / float64(n)
-	avgCostA := costArea / float64(m)
-
-	fmt.Printf("\naverage house cost/sqft: %.2f\n", avgCost)
-	fmt.Printf("average affordable house cost/sqft: %.2f\n", avgCostA)
-	fmt.Printf("ratio average/affordable: %.2f\n", avgCost/avgCostA)
+	fmt.Printf("\naverage house cost/sqft: %.2f\n", (total/float64(n))/avgArea)
+	fmt.Printf("average affordable house cost/sqft: %.2f\n", (atotal / float64(m) / avgAreaA))
+	fmt.Printf("ratio average/affordable: %.2f\n", ((total/float64(n))/avgArea)/(atotal/float64(m)/avgAreaA))
 }
 
 func read(path string) ([]string, error) {
