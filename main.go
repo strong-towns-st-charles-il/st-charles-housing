@@ -70,27 +70,30 @@ func main() {
 	fmt.Printf("total number of houses sold in 2022: %v\n", n)
 	fmt.Printf("total number of affordable: %v\n", m)
 	fmt.Printf("affordable house faction: %.2f\n", float64(m)/float64(n))
+
 	fmt.Printf("\naverage house price: $%.2f\n", total/float64(n))
 	fmt.Printf("average affordable house price: $%.2f\n", atotal/float64(m))
+	fmt.Printf("ratio average/affordable: %.2f\n", (total/float64(n))/(atotal/float64(m)))
 
 	bubbleSort(houses)
 	bubbleSort(affordableHouses)
 
 	fmt.Printf("\nmedian house price: $%v\n", houses[n/2].PropertyPrice)
 	fmt.Printf("median affordable house price: $%v\n", affordableHouses[m/2].PropertyPrice)
+	fmt.Printf("ratio average/affordable: %.2f\n", houses[n/2].PropertyPrice/affordableHouses[m/2].PropertyPrice)
 
 	avgArea := sqft / float64(n)
 	avgAreaA := asqft / float64(m)
 	fmt.Printf("\naverage house sqft: %.2f\n", avgArea)
 	fmt.Printf("average affordable house sqft: %.2f\n", avgAreaA)
-	fmt.Printf("%.2f\n", avgArea/avgAreaA)
+	fmt.Printf("ratio average/affordable: %.2f\n", avgArea/avgAreaA)
 
 	avgCost := costArea / float64(n)
 	avgCostA := costArea / float64(m)
 
 	fmt.Printf("\naverage house cost/sqft: %.2f\n", avgCost)
 	fmt.Printf("average affordable house cost/sqft: %.2f\n", avgCostA)
-	fmt.Printf("%.2f\n", avgCost/avgCostA)
+	fmt.Printf("ratio average/affordable: %.2f\n", avgCost/avgCostA)
 }
 
 func read(path string) ([]string, error) {
